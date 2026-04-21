@@ -60,15 +60,16 @@ const GiftRegistry = () => {
             </span>
           </h3>
           <div className="w-full max-w-3xl mx-auto mb-4">
-            <div className="w-full h-px bg-[#6B8FA3] opacity-40"></div>
+            <div className="w-full h-px bg-brand-light opacity-60"></div>
           </div>
-          <p className="text-base sm:text-lg font-albert font-thin text-[#333333] max-w-3xl mx-auto leading-relaxed text-center">
-            Our hearts are full, our joy is true,<br />
-            This day is brighter shared with you.<br />
-            If you wish to give as we begin,<br />
-            A <strong>monetary gift</strong> would help us win<br />
-            A life together, built with care,<br />
-            With love—and thanks beyond compare.
+          <p className="text-base sm:text-lg font-albert font-thin text-neutral-dark max-w-3xl mx-auto leading-relaxed text-center">
+            With grateful hearts, we<br />
+            ask only for your<br />
+            presence and prayers.<br />
+            If you choose to give<br />
+            nonetheless, a monetary<br />
+            gift would be<br />
+            appreciated.
           </p>
         </div>
       </div>

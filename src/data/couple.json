@@ -1,22 +1,22 @@
 {
   "bride": {
-    "firstName": "Emmariel",
-    "lastName": "Antonio",
-    "fullName": "EMMARIEL ALFANOSO ANTONIO"
+    "firstName": "Nicole",
+    "lastName": "Binamira",
+    "fullName": "NICOLE BINAMIRA"
   },
   "groom": {
-    "firstName": "Mark Resty",
-    "lastName": "Derit",
-    "fullName": "MARK RESTY ROYO DERIT"
+    "firstName": "Arjay",
+    "lastName": "Yadao Jr.",
+    "fullName": "RIZALDY YADAO JR."
   },
-  "together": "Mark Resty & Emmariel",
-  "nickname": "Mark Resty and Emmariel",
+  "together": "ARJAY & NICOLE",
+  "nickname": "ARJAY & NICOLE",
   "wedding": {
-    "date": "2026-04-08",
-    "time": "1:00 PM",
-    "dayOfWeek": "Wednesday",
-    "month": "April",
-    "day": "8",
+    "date": "2026-07-25",
+    "time": "5:00 PM",
+    "dayOfWeek": "Saturday",
+    "month": "July",
+    "day": "25",
     "year": "2026"
   }
 }

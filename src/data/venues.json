@@ -1,25 +1,25 @@
 {
   "ceremony": {
-    "name": "Basilica of the National Shrine of Our Lady of Mount Carmel Cathedral",
-    "address": "020 Broadway Ave",
-    "city": "New Manila, Quezon City",
-    "state": "Metro Manila",
+    "name": "Elia Events Place, Tagaytay",
+    "address": "",
+    "city": "Tagaytay",
+    "state": "Cavite",
     "zip": "Philippines",
-    "time": "1:00 PM",
-    "details": "Schedule: 1:00 PM",
-      "googleMapsUrl": "https://maps.app.goo.gl/nmHddmKZXFpzAYgdA",
-      "directionsUrl": "https://maps.app.goo.gl/nmHddmKZXFpzAYgdA"
+    "time": "5:00-5:30 PM",
+    "details": "Schedule: 5:00-5:30 PM",
+    "googleMapsUrl": "https://maps.app.goo.gl/LZJeYFcwKgsio2Xd8?g_st=ic",
+    "directionsUrl": "https://maps.app.goo.gl/LZJeYFcwKgsio2Xd8?g_st=ic"
   },
   "reception": {
-    "name": "Glass Garden Events Venue",
-    "address": "257 Evangelista Ave. Santolan", 
-    "city": "Pasig",
-    "state": "Metro Manila",
-    "zip": "1610, Philippines",
+    "name": "Elia Events Place, Tagaytay",
+    "address": "",
+    "city": "Tagaytay",
+    "state": "Cavite",
+    "zip": "Philippines",
     "time": "5:00 PM",
     "details": "Schedule: 5:00 PM to 10:00 PM",
     "landmark": "Events Venue",
-      "googleMapsUrl": "https://maps.app.goo.gl/DUmtDz9n3LpeR8kb8",
-      "directionsUrl": "https://maps.app.goo.gl/DUmtDz9n3LpeR8kb8"
+      "googleMapsUrl": "https://maps.app.goo.gl/LZJeYFcwKgsio2Xd8?g_st=ic",
+      "directionsUrl": "https://maps.app.goo.gl/LZJeYFcwKgsio2Xd8?g_st=ic"
   }
 }

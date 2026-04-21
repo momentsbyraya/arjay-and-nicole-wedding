@@ -507,7 +507,7 @@ const Moments = () => {
         ref={sectionRef}
         id="moments"
         data-section="moments"
-        className="relative w-full overflow-hidden min-h-screen"
+        className="relative w-full overflow-hidden min-h-screen bg-brand-light"
         style={{ opacity: 0, transform: 'translateX(100%)' }}
       >
         {/* Background Image */}
@@ -542,12 +542,11 @@ const Moments = () => {
           
           {/* Our Story Title */}
           <div ref={titleRef} className="w-full max-w-4xl text-center pt-12 pb-6 px-4">
-            <span className="nanum-myeongjo-regular text-2xl sm:text-3xl md:text-4xl lg:text-5xl inline-block" style={{ color: '#171717' }}>OUR</span>
+            <span className="nanum-myeongjo-regular text-2xl sm:text-3xl md:text-4xl lg:text-5xl inline-block text-neutral-dark">OUR</span>
             <span 
-              className="stylish-calligraphy text-5xl sm:text-6xl md:text-7xl lg:text-8xl inline-block ml-2" 
+              className="stylish-calligraphy text-5xl sm:text-6xl md:text-7xl lg:text-8xl inline-block ml-2 text-brand-dark" 
               style={{ 
                 lineHeight: '1.2',
-                color: '#006666',
                 display: 'inline-block',
                 paddingTop: '0.5rem',
                 paddingBottom: '0.5rem'
@@ -560,7 +559,7 @@ const Moments = () => {
           {/* First Paragraph */}
           {/* Love Story */}
             <div ref={firstParagraphRef} className="relative z-20 w-full max-w-4xl px-8 sm:px-12 md:px-8 lg:px-16 mt-4">
-              <div className="alice-regular font-black text-[#333333] leading-relaxed text-center" style={{ fontWeight: 900, fontSize: '1rem', lineHeight: '1.8' }}>
+              <div className="alice-regular font-black text-neutral-dark leading-relaxed text-center" style={{ fontWeight: 900, fontSize: '1rem', lineHeight: '1.8' }}>
                 <p className="mb-4">
                   At just 15 years old, the bride first encountered her future groom, a colleague of her father. On a lively evening, the groom graciously accompanied her father home from his birthday party. That night, as she studied, a gentle knock at the door sent her heart racing. When she opened it and saw him standing there, she flustered and quickly hid, a fleeting moment of magic passing between them, yet unacknowledged.
                 </p>
@@ -587,7 +586,7 @@ const Moments = () => {
 
            {/* Story text after first photo */}
            <div ref={secondParagraphRef} className="relative z-20 w-full max-w-4xl px-8 sm:px-12 md:px-8 lg:px-16 mt-8">
-             <div className="alice-regular font-black text-[#333333] leading-relaxed text-center" style={{ fontWeight: 900, fontSize: '1rem', lineHeight: '1.8' }}>
+             <div className="alice-regular font-black text-neutral-dark leading-relaxed text-center" style={{ fontWeight: 900, fontSize: '1rem', lineHeight: '1.8' }}>
                <p className="mb-4">
                  Life led them down separate journeys but fate had other plans. Many years later, as she prepared to drive her first car, her father called upon the groom to lend a hand.
                </p>
@@ -612,7 +611,7 @@ const Moments = () => {
 
            {/* Story text after second photo */}
            <div ref={thirdParagraphRef} className="relative z-20 w-full max-w-4xl px-8 sm:px-12 md:px-8 lg:px-16 mt-8">
-             <div className="alice-regular font-black text-[#333333] leading-relaxed text-center" style={{ fontWeight: 900, fontSize: '1rem', lineHeight: '1.8' }}>
+             <div className="alice-regular font-black text-neutral-dark leading-relaxed text-center" style={{ fontWeight: 900, fontSize: '1rem', lineHeight: '1.8' }}>
                <p className="mb-4">
                  That driving lesson blossomed into a beautiful connection filled with laughter, shared dreams, and rediscovery. Over the past five years, they have not only celebrated milestones but have also faced challenges that have made them better individuals. Supporting one another through thick and thin, they have both grown stronger and more compassionate, embodying the true essence of partnership.
                </p>
@@ -622,19 +621,15 @@ const Moments = () => {
            {/* Moments Gallery Section */}
            <div 
              ref={momentsGridRef} 
-             className="relative z-20 w-full flex flex-col mt-8"
-             style={{
-               backgroundColor: '#f4f5ef'
-             }}
+             className="relative z-20 w-full flex flex-col mt-8 bg-white"
            >
              {/* Title - Full Width at Top */}
              <div className="relative z-20 w-full" style={{ border: 'none' }}>
-               <h2 ref={momentsTitleRef} className="w-full text-center px-4" style={{
+               <h2 ref={momentsTitleRef} className="w-full text-center px-4 text-white" style={{
                  backgroundImage: 'url(/assets/images/graphics/bg-3.png)',
                      backgroundSize: 'cover',
                  backgroundPosition: 'center',
                  backgroundRepeat: 'no-repeat',
-                 color: '#f5f5f0',
                  paddingTop: '4rem',
                  paddingBottom: '4rem',
                  overflow: 'visible',
@@ -654,11 +649,11 @@ const Moments = () => {
                    className="stylish-calligraphy text-5xl sm:text-6xl md:text-7xl lg:text-8xl inline-block" 
                    style={{
                      lineHeight: '1.2',
-                     background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 25%, #FFD700 50%, #B8860B 75%, #DAA520 100%)',
+                     background: 'linear-gradient(135deg, var(--brand-light) 0%, var(--white) 22%, var(--brand) 48%, var(--brand-dark) 72%, var(--brand-light) 100%)',
                      WebkitBackgroundClip: 'text',
                      WebkitTextFillColor: 'transparent',
                      backgroundClip: 'text',
-                     filter: 'drop-shadow(0 2px 4px rgba(218, 165, 32, 0.3))',
+                     filter: 'drop-shadow(0 2px 4px rgba(31, 42, 55, 0.18))',
                      display: 'inline-block',
                      paddingTop: '0.5rem',
                      paddingBottom: '0.5rem'
@@ -671,13 +666,12 @@ const Moments = () => {
 
              {/* Content Container */}
              <div 
-               className="w-full flex flex-col relative z-10"
+               className="w-full flex flex-col relative z-10 bg-neutral-light"
                    style={{
                  backgroundImage: 'url(/assets/images/graphics/bg-3.png)',
                  backgroundSize: '100% 50%',
                  backgroundPosition: 'top center',
                  backgroundRepeat: 'no-repeat',
-                 backgroundColor: '#f4f5ef'
                }}
              >
                {/* Horizontal Scrollable Images */}
@@ -747,7 +741,7 @@ const Moments = () => {
 
            {/* Story text before final photo */}
            <div ref={finalParagraphRef} className="relative z-20 w-full max-w-4xl px-8 sm:px-12 md:px-8 lg:px-16 mt-8 mx-auto">
-             <div className="alice-regular font-black text-[#333333] leading-relaxed text-center" style={{ fontWeight: 900, fontSize: '1rem', lineHeight: '1.8' }}>
+             <div className="alice-regular font-black text-neutral-dark leading-relaxed text-center" style={{ fontWeight: 900, fontSize: '1rem', lineHeight: '1.8' }}>
                <p className="mb-4">
                  Join us in celebrating their extraordinary journey—a tale of serendipity, unexpected love, and the joy of two hearts making each other better. Together, they are thrilled to say, "I do," as they embrace a future full of promise and adventure.
                </p>
@@ -795,7 +789,7 @@ const Moments = () => {
             navigate('/')
           }
         }}
-        className="fixed bottom-12 right-6 z-[100] w-14 h-14 bg-[#333333] text-white rounded-full shadow-lg hover:bg-[#333333]/80 hover:scale-110 transition-all duration-300 flex items-center justify-center group"
+        className="fixed bottom-12 right-6 z-[100] w-14 h-14 bg-brand-dark text-white rounded-full shadow-lg hover:bg-brand hover:scale-110 transition-all duration-300 flex items-center justify-center group"
         aria-label="Back to home"
         style={{ pointerEvents: 'auto' }}
       >

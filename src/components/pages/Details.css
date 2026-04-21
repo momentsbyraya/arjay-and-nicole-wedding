@@ -14,7 +14,7 @@
 
 .venue-title-text {
   line-height: 0.8;
-  color: #6B8FA3;
+  color: var(--brand-dark);
 }
 
 /* Venue Image Container */
@@ -48,7 +48,7 @@
 
 .program-title-text {
   line-height: 0.8;
-  color: #6B8FA3;
+  color: var(--brand-dark);
   display: block;
   text-align: center;
 }
@@ -60,7 +60,7 @@
 /* Date Selector */
 .date-month-year {
   font-style: italic;
-  color: #6B8FA3;
+  color: var(--brand-dark);
 }
 
 .heart-day-number {
@@ -73,22 +73,22 @@
 }
 
 .timeline-event-time {
-  color: #333333;
+  color: var(--neutral-dark);
 }
 
 .timeline-event-description {
-  color: #333333;
+  color: var(--neutral-dark);
 }
 
 /* Dress Code */
 .dress-code-title-text {
   line-height: 0.8;
-  color: #6B8FA3;
+  color: var(--brand-dark);
   white-space: nowrap;
 }
 
 .dress-code-description {
-  color: #171717;
+  color: var(--neutral-dark);
 }
 
 .dress-code-image-container {
@@ -123,13 +123,13 @@
   to {
     opacity: 1;
     transform: translate(-50%, 0);
-}
+  }
 }
 
 /* Gift Registry */
 .gift-registry-title-text {
   line-height: 0.8;
-  color: #6B8FA3;
+  color: var(--brand-dark);
 }
 
 .gift-button {
@@ -148,7 +148,7 @@
 
 .upload-title-text {
   line-height: 0.8;
-  color: #6B8FA3;
+  color: var(--brand-dark);
 }
 
 .upload-qr-container {
@@ -167,18 +167,18 @@
   }
 }
 
-/* FAQ Section */
+/* FAQ Section — mid tone for white type (primary brand is lighter #8698AA) */
 .faq-section {
   padding: 4rem 0;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
-  background-color: #6B8FA3;
+  background-color: var(--brand-dark);
 }
 
 .faq-title-text {
   line-height: 0.8;
-  color: #f5f5f0;
+  color: var(--white);
 }
 
 /* Modal */
@@ -206,4 +206,27 @@
 .faq-phone-link:focus {
   text-decoration: underline;
   outline: none;
+}
+
+/* Schedule strip — brand-dark band so white timeline type stays readable */
+.details-schedule-strip {
+  background-color: var(--brand-dark);
+  color: var(--white);
+}
+
+.details-schedule-strip .program-title-text,
+.details-schedule-strip .date-month-year {
+  color: var(--white);
+}
+
+.details-schedule-strip .program-description,
+.details-schedule-strip .timeline-event-time,
+.details-schedule-strip .timeline-event-description {
+  color: color-mix(in srgb, var(--white) 92%, transparent);
+}
+
+.details-schedule-strip .program-section {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }

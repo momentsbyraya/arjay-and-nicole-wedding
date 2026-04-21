@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ArrowRight } from 'lucide-react'
@@ -14,9 +14,18 @@ const Venue = () => {
   const venueTitleRef = useRef(null)
   const venue1Ref = useRef(null)
   const venue2Ref = useRef(null)
+  const venueImageRef = useRef(null)
+  const [currentVenueImageIndex, setCurrentVenueImageIndex] = useState(0)
 
   const ceremony = venuesData.ceremony
   const reception = venuesData.reception
+  const isSameVenue =
+    ceremony.googleMapsUrl === reception.googleMapsUrl ||
+    (ceremony.name === reception.name &&
+      ceremony.city === reception.city &&
+      ceremony.state === reception.state)
+  const venueImages = ['/assets/images/venues/1.png', '/assets/images/venues/2.png']
+  const activeVenueImage = venueImages[currentVenueImageIndex]
 
   useEffect(() => {
     // Venue Title animation
@@ -132,6 +141,26 @@ const Venue = () => {
     }
   }, [])
 
+  useEffect(() => {
+    if (venueImages.length < 2) return undefined
+
+    const intervalId = window.setInterval(() => {
+      setCurrentVenueImageIndex(prevIndex => (prevIndex + 1) % venueImages.length)
+    }, 3000)
+
+    return () => window.clearInterval(intervalId)
+  }, [venueImages.length])
+
+  useEffect(() => {
+    if (!venueImageRef.current) return
+
+    gsap.fromTo(
+      venueImageRef.current,
+      { opacity: 0.45, scale: 0.97 },
+      { opacity: 1, scale: 1, duration: 0.55, ease: 'power2.out' }
+    )
+  }, [currentVenueImageIndex])
+
   return (
     <>
       {/* Venue Title */}
@@ -160,8 +189,9 @@ const Venue = () => {
                 <div className="w-full md:w-1/2 lg-custom:w-full">
                   <div className="w-full relative venue-image-container">
                     <img 
-                      src="/assets/images/venues/ceremony.png" 
-                      alt={ceremony.name} 
+                      ref={venueImageRef}
+                      src={activeVenueImage}
+                      alt={isSameVenue ? `${ceremony.name} - Ceremony and Reception` : ceremony.name}
                       className="w-full h-full object-cover rounded"
                     />
                   </div>
@@ -171,13 +201,23 @@ const Venue = () => {
                 <div className="w-full md:w-1/2 lg-custom:w-full flex flex-col justify-between text-left">
                   {/* Venue Name and Location Container */}
                   <div>
+                    {isSameVenue && (
+                      <p className="text-sm sm:text-base font-albert font-thin italic text-neutral-dark mb-1 text-left">
+                        Ceremony & Reception Venue
+                      </p>
+                    )}
                     {/* Venue Name */}
-                    <div className="text-lg sm:text-xl md:text-2xl font-boska text-[#333333] mb-2 text-left">
+                    <div className="text-lg sm:text-xl md:text-2xl font-boska text-neutral-dark mb-2 text-left">
                       {ceremony.name}
                     </div>
+                    {ceremony.time && (
+                      <p className="text-sm sm:text-base font-albert text-neutral-dark mb-2 text-left">
+                        {isSameVenue ? `${ceremony.time} onwards` : ceremony.time}
+                      </p>
+                    )}
                     
                      {/* Address */}
-                     <p className="text-sm sm:text-base font-albert font-thin text-[#333333] mb-4 text-left">
+                     <p className="text-sm sm:text-base font-albert font-thin text-neutral-dark mb-4 text-left">
                        {ceremony.address && `${ceremony.address}, `}
                        {ceremony.city}
                        {ceremony.state && `, ${ceremony.state}`}
@@ -202,66 +242,70 @@ const Venue = () => {
           </div>
         </div>
 
-        {/* Vertical Divider - Hidden on mobile, shown on 992px and above */}
-        <div className="hidden lg-custom:block w-px bg-[#333333] opacity-40 self-stretch"></div>
-        <div className="lg-custom:hidden w-full">
-          <Line />
-        </div>
+        {!isSameVenue && (
+          <>
+            {/* Vertical Divider - Hidden on mobile, shown on 992px and above */}
+            <div className="hidden lg-custom:block w-px bg-brand-light opacity-70 self-stretch"></div>
+            <div className="lg-custom:hidden w-full">
+              <Line />
+            </div>
 
-        {/* Reception Information */}
-        <div className="relative overflow-visible flex-1">
-          <div className="relative overflow-hidden">
-            <div 
-              ref={venue2Ref}
-              className="text-center transition-opacity duration-500 ease-in-out"
-            >
-              {/* Venue Image and Details - Stacked on mobile, side by side on 768px-991px, stacked on 992px+ */}
-              <div className="flex flex-col md:flex-row lg-custom:flex-col gap-6 md:gap-8 items-start">
-                {/* Venue Details - First on mobile, first on desktop (left) */}
-                <div className="w-full md:w-1/2 lg-custom:w-full flex flex-col justify-between text-left order-2 md:order-1 lg-custom:order-2">
-                  {/* Venue Name and Location Container */}
-                  <div>
-                    {/* Venue Name */}
-                    <div className="text-lg sm:text-xl md:text-2xl font-boska text-[#333333] mb-2 text-left">
-                      {reception.name}
+            {/* Reception Information */}
+            <div className="relative overflow-visible flex-1">
+              <div className="relative overflow-hidden">
+                <div 
+                  ref={venue2Ref}
+                  className="text-center transition-opacity duration-500 ease-in-out"
+                >
+                  {/* Venue Image and Details - Stacked on mobile, side by side on 768px-991px, stacked on 992px+ */}
+                  <div className="flex flex-col md:flex-row lg-custom:flex-col gap-6 md:gap-8 items-start">
+                    {/* Venue Details - First on mobile, first on desktop (left) */}
+                    <div className="w-full md:w-1/2 lg-custom:w-full flex flex-col justify-between text-left order-2 md:order-1 lg-custom:order-2">
+                      {/* Venue Name and Location Container */}
+                      <div>
+                        {/* Venue Name */}
+                        <div className="text-lg sm:text-xl md:text-2xl font-boska text-neutral-dark mb-2 text-left">
+                          {reception.name}
+                        </div>
+                        
+                         {/* Address */}
+                         <p className="text-sm sm:text-base font-albert font-thin text-neutral-dark mb-4 text-left">
+                           {reception.address && `${reception.address}, `}
+                           {reception.city}
+                           {reception.state && `, ${reception.state}`}
+                           {reception.zip && `, ${reception.zip}`}
+                         </p>
+                      </div>
+
+                      {/* Google Maps Link Button */}
+                      <div className="flex justify-start items-center">
+                        <SecondaryButton
+                          href={reception.googleMapsUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          icon={ArrowRight}
+                        >
+                          Get Direction
+                        </SecondaryButton>
+                      </div>
                     </div>
                     
-                     {/* Address */}
-                     <p className="text-sm sm:text-base font-albert font-thin text-[#333333] mb-4 text-left">
-                       {reception.address && `${reception.address}, `}
-                       {reception.city}
-                       {reception.state && `, ${reception.state}`}
-                       {reception.zip && `, ${reception.zip}`}
-                     </p>
-                  </div>
-
-                  {/* Google Maps Link Button */}
-                  <div className="flex justify-start items-center">
-                    <SecondaryButton
-                      href={reception.googleMapsUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      icon={ArrowRight}
-                    >
-                      Get Direction
-                    </SecondaryButton>
-                  </div>
-                </div>
-                
-                {/* Venue Image - Second on mobile, second on desktop (right) */}
-                <div className="w-full md:w-1/2 lg-custom:w-full order-1 md:order-2 lg-custom:order-1">
-                  <div className="w-full relative venue-image-container">
-                    <img 
-                      src="/assets/images/venues/reception.png" 
-                      alt={reception.name} 
-                      className="w-full h-full object-cover rounded"
-                    />
+                    {/* Venue Image - Second on mobile, second on desktop (right) */}
+                    <div className="w-full md:w-1/2 lg-custom:w-full order-1 md:order-2 lg-custom:order-1">
+                      <div className="w-full relative venue-image-container">
+                        <img 
+                          src="/assets/images/venues/2.png" 
+                          alt={reception.name} 
+                          className="w-full h-full object-cover rounded"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </>
+        )}
       </div>
     </>
   )

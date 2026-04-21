@@ -10,6 +10,27 @@ export default {
         'lg-custom': '992px',
       },
       colors: {
+        /** Primary UI = #8698AA; darker steps for depth only */
+        brand: {
+          light: '#D4DCE3',
+          DEFAULT: '#8698AA',
+          dark: '#64798C',
+        },
+        neutral: {
+          light: '#F5F7FA',
+          dark: '#1F2A37',
+        },
+        white: '#FFFFFF',
+        /** Dress-code sample chips (actual fabric colors, not brand UI) */
+        dressSwatch: {
+          black: '#000000',
+          navy: '#003366',
+          dustyRose: '#d8beb5',
+          mauve: '#ac898d',
+          blushPink: '#dab2a9',
+          beige: '#e7dbcb',
+          peach: '#dcbaa1',
+        },
         'wedding': {
           50: '#fdf8f6',
           100: '#f2e8e5',

@@ -69,7 +69,7 @@ const PhotoUpload = () => {
                 <div className="w-full relative upload-qr-container" style={{ maxWidth: '350px' }}>
                   <div className="bg-white p-4 rounded-lg shadow-md w-full h-full flex items-center justify-center">
                     <img 
-                      src="/assets/images/qr/qr-code.png" 
+                      src="/assets/images/qr/qr-code (5).png"
                       alt="Upload QR Code" 
                       className="w-full h-full object-contain"
                     />
@@ -80,14 +80,14 @@ const PhotoUpload = () => {
               {/* Upload Details - 50% width on mobile, full width on 992px+ */}
               <div className="w-1/2 lg-custom:w-full lg-custom:h-fit lg-custom:flex lg-custom:flex-col lg-custom:justify-center lg-custom:items-center flex flex-col justify-between text-left lg-custom:text-center py-4 sm:py-6 upload-content-container">
                 {/* Description */}
-                <p className="text-sm sm:text-base font-albert font-thin text-[#333333] mb-4 text-left lg-custom:text-center">
+                <p className="text-sm sm:text-base font-albert font-thin text-neutral-dark mb-4 text-left lg-custom:text-center">
                   Share your photos and videos from our special day.
                 </p>
 
                 {/* Upload Button */}
                 <div className="flex justify-start lg-custom:justify-center items-center">
                   <SecondaryButton
-                    href="https://drive.google.com/drive/folders/1FJYHnDzY0zNlWEzdcjwjOot7tGcp2Y01?usp=sharing"
+                    href="https://drive.google.com/drive/folders/1D0Ta8lugBLWcb5svaBEGKw6uTOdex4s9?usp=drive_link"
                     target="_blank"
                     rel="noopener noreferrer"
                     icon={ArrowRight}

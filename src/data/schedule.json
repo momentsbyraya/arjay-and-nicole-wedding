@@ -1,39 +1,46 @@
 {
   "events": [
     {
-      "time": "12:45 PM",
-      "description": "Welcoming of Guests",
+      "time": "4:00 PM",
+      "description": "Guest Gathering",
       "image": "/assets/images/graphics/welcome-2.png",
-      "imageAlt": "Welcoming of Guests",
+      "imageAlt": "Guest Gathering",
       "position": "left"
     },
     {
-      "time": "1:00 PM",
-      "description": "Ceremony",
-      "image": "/assets/images/graphics/ceremony-2.png",
-      "imageAlt": "Ceremony",
+      "time": "4:30 PM",
+      "description": "Open Pica Pica Bar / Coffee bar",
+      "image": "/assets/images/graphics/cake-2.png",
+      "imageAlt": "Pica pica and coffee bar",
       "position": "right"
     },
-          {
-            "time": "4:00 PM",
-            "description": "Cocktail Hour",
-            "image": "/assets/images/graphics/cake-2.png",
-            "imageAlt": "Reception",
-            "position": "left"
-          },
+    {
+      "time": "5:00-5:30 PM",
+      "description": "Wedding Ceremony",
+      "image": "/assets/images/graphics/ceremony-2.png",
+      "imageAlt": "Wedding Ceremony",
+      "position": "left"
+    },
+    {
+      "time": "5:15 PM",
+      "description": "Reception Program",
+      "image": "/assets/images/graphics/car-2.png",
+      "imageAlt": "Reception Program",
+      "position": "right"
+    },
     {
       "time": "6:00 PM",
       "description": "Dinner",
       "image": "/assets/images/graphics/dinner-2.png",
       "imageAlt": "Dinner",
-      "position": "right"
+      "position": "left"
     },
     {
-      "time": "7:00 PM",
-      "description": "Program",
+      "time": "7:00-10:00 PM",
+      "description": "Wedding Party",
       "image": "/assets/images/graphics/car-2.png",
-      "imageAlt": "Program",
-      "position": "left"
+      "imageAlt": "Wedding Party",
+      "position": "right"
     }
   ]
 }

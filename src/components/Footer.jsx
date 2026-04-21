@@ -1,5 +1,4 @@
 import React from 'react'
-import { themeConfig } from '../config/themeConfig'
 
 const Footer = () => {
   const handleFooterClick = () => {
@@ -8,15 +7,15 @@ const Footer = () => {
 
   return (
     <footer 
-      className="w-full pb-4 transition-colors duration-300 hover:bg-[#013718] active:bg-[#013718] cursor-pointer"
+      className="w-full pb-4 transition-colors duration-300 hover:bg-brand-dark active:bg-brand-dark cursor-pointer"
       onClick={handleFooterClick}
     >
-      {/* Divider line on top */}
-      <div className="w-full h-px bg-[#333333] opacity-40 mb-4"></div>
+      {/* Gold accent line on top */}
+      <div className="w-full h-0.5 bg-gold-400 mb-4" aria-hidden="true" />
       
       {/* Footer text */}
       <div className="text-center">
-        <p className="text-sm sm:text-base font-albert font-thin transition-colors duration-300 hover:!text-[#f5f5f0] active:!text-[#f5f5f0]" style={{ color: themeConfig.cssVariables['--accent-text'] }}>
+        <p className="text-sm sm:text-base font-albert font-thin text-brand-dark transition-colors duration-300 hover:!text-white active:!text-white">
           Made with <ion-icon name="heart" className="inline-block mx-1 align-middle" style={{ fontSize: '1em', verticalAlign: 'middle' }}></ion-icon> by Moments by Raya
         </p>
       </div>

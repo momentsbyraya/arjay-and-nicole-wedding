@@ -1,14 +1,16 @@
 import React from 'react'
 
+/** Matches Tailwind `brand-light` / `--brand-light` (no harsh white band) */
+const BR = 212
+const BG = 220
+const BB = 227
+
 const GradientLayer = ({ height, opacity, gradientId, transform = 'translateY(8px)' }) => {
-  // Calculate a more solid ending opacity (not fully solid, but more opaque for smooth transition)
-  const solidEndOpacity = Math.min(opacity + 0.2, 0.95) // Add 0.2 to opacity but cap at 0.95 for smooth transition
-  
-  // Create a wave path at the top - using different wave amplitudes for variety
-  const waveAmplitude = opacity * 8 // Vary amplitude based on opacity for different wave sizes
-  const waveFrequency = 0.02 // Controls wave frequency
-  
-  // Generate wave path
+  const solidEndOpacity = Math.min(opacity + 0.18, 0.92)
+
+  const waveAmplitude = opacity * 8
+  const waveFrequency = 0.02
+
   const generateWavePath = (width, height, amplitude, frequency) => {
     let path = `M 0 ${height} L 0 ${amplitude} `
     for (let x = 0; x <= width; x += 2) {
@@ -18,9 +20,9 @@ const GradientLayer = ({ height, opacity, gradientId, transform = 'translateY(8p
     path += `L ${width} ${height} Z`
     return path
   }
-  
+
   return (
-    <svg 
+    <svg
       className={`absolute bottom-0 left-0 w-full ${height} pointer-events-none`}
       style={{ transform }}
       preserveAspectRatio="none"
@@ -29,13 +31,13 @@ const GradientLayer = ({ height, opacity, gradientId, transform = 'translateY(8p
     >
       <defs>
         <linearGradient id={gradientId} x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="rgba(255, 255, 255, 0)" />
-          <stop offset="60%" stopColor={`rgba(255, 255, 255, ${opacity * 0.5})`} />
-          <stop offset="85%" stopColor={`rgba(255, 255, 255, ${opacity * 0.8})`} />
-          <stop offset="100%" stopColor={`rgba(255, 255, 255, ${solidEndOpacity})`} />
+          <stop offset="0%" stopColor={`rgba(${BR}, ${BG}, ${BB}, 0)`} />
+          <stop offset="50%" stopColor={`rgba(${BR}, ${BG}, ${BB}, ${opacity * 0.45})`} />
+          <stop offset="82%" stopColor={`rgba(${BR}, ${BG}, ${BB}, ${opacity * 0.72})`} />
+          <stop offset="100%" stopColor={`rgba(${BR}, ${BG}, ${BB}, ${solidEndOpacity})`} />
         </linearGradient>
       </defs>
-      <path 
+      <path
         d={generateWavePath(1200, 120, waveAmplitude, waveFrequency)}
         fill={`url(#${gradientId})`}
       />

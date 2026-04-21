@@ -43,11 +43,14 @@ const Details = () => {
       'Wedding Ceremony Location': MapPin,
       'Wedding Reception Location': UtensilsCrossed,
       'What time is the wedding?': Clock,
+      'What time should I arrive at the venue?': Clock,
       'What is the wedding theme and dress code?': Palette,
       'Can I bring a plus one?': Users,
       'Is RSVP required?': Mail,
       'Are children allowed?': Baby,
+      'Are children allowed at the wedding?': Baby,
       'Is parking available?': Car,
+      'Are there available guest parking slots at the venue?': Car,
       'Can guests take photos or videos during the ceremony?': Camera,
       'Is there a gift registry?': Gift,
       'Final Reminder': Heart
@@ -304,7 +307,7 @@ const Details = () => {
       ref={sectionRef}
       id="details"
       data-section="details"
-      className="relative pb-20 w-full overflow-hidden bg-white details-section"
+      className="relative pb-20 w-full overflow-hidden bg-brand-light details-section"
     >
       {/* Flower Banner Image at Top */}
       <ImageBanner 
@@ -312,13 +315,13 @@ const Details = () => {
         alt="Flower banner"
       />
       
-      {/* Content */}
+      {/* Content — white band (brand-light page shell) */}
       <div className="relative z-20 flex items-center justify-center pt-12 pb-32">
-        <div className="max-w-xs sm:max-w-md lg:max-w-3xl w-full mx-auto">
+        <div className="max-w-xs sm:max-w-md lg:max-w-3xl w-full mx-auto bg-white py-10 px-4 sm:px-6 rounded-xl shadow-sm">
           {/* Header Section */}
           <div className="text-center">
             <div ref={headerContentRef}>
-              <p className="text-base sm:text-lg font-albert font-thin text-[#333333] max-w-3xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg font-albert font-thin text-neutral-dark max-w-3xl mx-auto leading-relaxed">
                 Join us as we exchange our vows
               </p>
               <Divider />
@@ -327,9 +330,9 @@ const Details = () => {
 
           {/* Venue Section */}
           <Venue />
-                  </div>
-                </div>
-                
+        </div>
+      </div>
+
        {/* Flower Divider */}
        <div ref={curvedDivider1Ref} className="relative w-full h-16 sm:h-20 md:h-24 flex items-center justify-center">
          <img 
@@ -340,13 +343,12 @@ const Details = () => {
          />
             </div>
 
-      {/* Content */}
-      <div className="relative z-20 flex items-center justify-center pt-12">
-        <div className="max-w-xs sm:max-w-md lg:max-w-3xl w-full mx-auto">
-          {/* Schedule Section */}
+      {/* Schedule — brand band */}
+      <div className="relative z-20 flex items-center justify-center pt-12 pb-12">
+        <div className="w-full max-w-xs sm:max-w-md lg:max-w-3xl mx-auto details-schedule-strip text-white py-12 px-4 sm:px-6 rounded-xl">
           <Schedule />
-                    </div>
-                </div>
+        </div>
+      </div>
 
       {/* Curved Line Divider */}
       {/* <div ref={curvedDivider2Ref} className="relative w-full py-8 flex items-center justify-center">
@@ -358,7 +360,7 @@ const Details = () => {
         >
           <path 
             d="M0,50 Q300,20 600,50 T1200,50" 
-            stroke="#6B8FA3" 
+            stroke="rgb(100, 121, 140)" 
             strokeWidth="2" 
             fill="none"
             opacity="0.4"
@@ -389,7 +391,7 @@ const Details = () => {
         >
           <path 
             d="M0,50 Q300,20 600,50 T1200,50" 
-            stroke="#6B8FA3" 
+            stroke="rgb(100, 121, 140)" 
             strokeWidth="2" 
             fill="none"
             opacity="0.4"
@@ -397,9 +399,9 @@ const Details = () => {
         </svg>
       </div> */}
 
-      {/* Content */}
+      {/* Content — white band */}
       <div className="relative z-20 flex items-center justify-center pt-12">
-        <div className="max-w-xs sm:max-w-md lg:max-w-3xl w-full mx-auto">
+        <div className="max-w-xs sm:max-w-md lg:max-w-3xl w-full mx-auto bg-white py-10 px-4 sm:px-6 rounded-xl shadow-sm">
           {/* Dress Code Section */}
           <DressCode />
 
@@ -441,15 +443,15 @@ const Details = () => {
                 return (
                   <div key={index}>
                     <div className="mb-2">
-                      <p className="text-base sm:text-lg font-albert text-[#f5f5f0] mb-2 faq-question-bold">
+                      <p className="text-base sm:text-lg font-albert text-white mb-2 faq-question-bold">
                         Q: {text}
                       </p>
-                      <p className="text-sm sm:text-base font-albert font-thin text-[#f5f5f0] whitespace-pre-line">
+                      <p className="text-sm sm:text-base font-albert font-thin text-white whitespace-pre-line">
                         A: {parseAnswerWithPhoneNumbers(item.answer)}
                       </p>
                     </div>
                     {index < faqItems.faqData.length - 1 && (
-                      <div className="h-px bg-[#f5f5f0]/30 mt-6"></div>
+                      <div className="h-px bg-white/30 mt-6"></div>
                     )}
                   </div>
                 )
@@ -487,7 +489,7 @@ const Details = () => {
           navigate('/')
         }
       }}
-      className="fixed bottom-12 right-6 z-[100] w-14 h-14 bg-[#333333] text-white rounded-full shadow-lg hover:bg-[#333333]/80 hover:scale-110 transition-all duration-300 flex items-center justify-center group back-button"
+      className="fixed bottom-12 right-6 z-[100] w-14 h-14 bg-brand-dark text-white rounded-full shadow-lg hover:bg-brand hover:scale-110 transition-all duration-300 flex items-center justify-center group back-button"
       aria-label="Back to home"
     >
       <ArrowLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform duration-300" />

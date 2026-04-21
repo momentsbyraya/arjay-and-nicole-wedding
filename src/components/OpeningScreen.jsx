@@ -86,7 +86,7 @@ function OpeningScreen({ onEnvelopeOpen }) {
       <section className="cssletter flex flex-col items-center relative z-10 w-full py-8" style={{ minHeight: 'auto', height: 'auto' }}>
         {/* Click me text */}
         <div ref={clickMeRef} className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 text-center click-me-container">
-          <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold" style={{ fontFamily: 'var(--letter-font)', color: '#333333' }}>
+          <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-neutral-dark" style={{ fontFamily: 'var(--letter-font)' }}>
             Click me!
           </p>
         </div>
@@ -115,7 +115,7 @@ function OpeningScreen({ onEnvelopeOpen }) {
           </div>
           {/* Letter that slides up when envelope opens */}
           <div className="envelope-letter envelope-letter-centered">
-            <p className="text-2xl sm:text-3xl md:text-4xl font-bold">You are invited!</p>
+            <p className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-neutral-dark">You are invited!</p>
             <img 
               src="/assets/images/graphics/cutlery-sketch.png" 
               alt="Cutlery sketch" 
@@ -130,20 +130,18 @@ function OpeningScreen({ onEnvelopeOpen }) {
         {/* Couple name and date below envelope */}
         <div ref={coupleNameRef} className="mt-12 sm:mt-16 md:mt-20 text-center couple-name-container">
           <h2 
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-script leading-tight"
+            className="font-serif font-semibold leading-tight tracking-tight text-neutral-dark"
             style={{ 
-              color: '#333333', 
-              fontSize: 'clamp(1.5rem, 4vw, 48px)',
+              fontSize: 'clamp(1.5rem, 4.2vw, 3rem)',
               textShadow: 'none'
             }}
           >
             {couple.nickname}
           </h2>
           <p 
-            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-script mt-1"
+            className="font-albert font-light mt-3 tracking-[0.08em] text-neutral-dark/90"
             style={{ 
-              color: '#333333', 
-              fontSize: 'clamp(1rem, 2.5vw, 30px)',
+              fontSize: 'clamp(0.875rem, 2.1vw, 1.2rem)',
               textShadow: 'none'
             }}
           >

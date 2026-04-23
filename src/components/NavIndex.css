@@ -282,6 +282,58 @@
   line-height: 0.9;
 }
 
+/* Prenup Polaroids */
+.prenup-polaroids-container {
+  margin-top: -7vw;
+  margin-bottom: 2vw;
+  z-index: 5;
+}
+
+.prenup-polaroid {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.prenup-polaroid:first-child {
+  transform: rotate(-5deg);
+  z-index: 2;
+}
+
+.prenup-polaroid:last-child {
+  transform: rotate(6deg);
+  margin-left: -4vw;
+  margin-top: 2vw;
+  z-index: 3;
+}
+
+.prenup-polaroid:hover {
+  transform: translateY(-0.6vw) scale(1.02);
+}
+
+.prenup-polaroid:first-child:hover {
+  transform: rotate(-5deg) translateY(-0.6vw) scale(1.02);
+}
+
+.prenup-polaroid:last-child:hover {
+  transform: rotate(6deg) translateY(-0.6vw) scale(1.02);
+}
+
+.prenup-polaroid-frame {
+  width: 30vw;
+  border-top: 1.2vw solid white;
+  border-left: 1.2vw solid white;
+  border-right: 1.2vw solid white;
+  border-bottom: 5vw solid white;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.2), 0 6px 8px -6px rgba(0, 0, 0, 0.15);
+}
+
+.prenup-polaroid-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
 /* Moments Images Container */
 .moments-images-container {
   margin-top: 2vw;
@@ -371,5 +423,25 @@
 @media (min-width: 992px) {
   .flower-1-rotate {
     transform: translate(-20%, 10%) rotate(35deg) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .prenup-polaroids-container {
+    margin-top: -5vw;
+    margin-bottom: 4vw;
+  }
+
+  .prenup-polaroid-frame {
+    width: 40vw;
+    border-top: 1.8vw solid white;
+    border-left: 1.8vw solid white;
+    border-right: 1.8vw solid white;
+    border-bottom: 7vw solid white;
+  }
+
+  .prenup-polaroid:last-child {
+    margin-left: -8vw;
+    margin-top: 4vw;
   }
 }

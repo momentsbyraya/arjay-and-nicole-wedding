@@ -287,9 +287,6 @@ const NavIndex = ({ onOpenRSVP }) => {
                   <p className="font-tebranos polaroid-text-name uppercase text-brand leading-tight">
                     {couple.groom.firstName}
                   </p>
-                  <p className="font-ballet polaroid-text-name text-neutral-dark leading-tight -mt-4">
-                    {couple.groom.lastName}
-                  </p>
                 </div>
                 <p className="caudex-bold polaroid-text-and uppercase text-neutral-dark leading-tight my-1">
                   AND
@@ -298,9 +295,6 @@ const NavIndex = ({ onOpenRSVP }) => {
                 <div>
                   <p className="font-tebranos polaroid-text-name uppercase text-brand leading-tight">
                     {couple.bride.firstName}
-                  </p>
-                  <p className="font-ballet polaroid-text-name text-neutral-dark leading-tight -mt-4">
-                    {couple.bride.lastName}
                   </p>
                 </div>
               </div>
@@ -383,6 +377,28 @@ const NavIndex = ({ onOpenRSVP }) => {
                 <p className="imperial-script-regular underline details-text-details">
                   Details
                 </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Prenup Polaroids */}
+        <div className="flex justify-center items-center relative prenup-polaroids-container">
+          <div className="prenup-polaroid">
+            <div className="bg-white prenup-polaroid-frame">
+              <img
+                src="/assets/images/prenup/img2.jpg"
+                alt="Arjay and Nicole prenup portrait"
+                className="prenup-polaroid-image"
+              />
+            </div>
+          </div>
+          <div className="prenup-polaroid">
+            <div className="bg-white prenup-polaroid-frame">
+              <img
+                src="/assets/images/prenup/img1.jpg"
+                alt="Arjay and Nicole prenup moment"
+                className="prenup-polaroid-image"
+              />
             </div>
           </div>
         </div>

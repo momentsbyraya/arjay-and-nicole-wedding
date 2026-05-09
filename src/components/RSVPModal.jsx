@@ -126,16 +126,15 @@ const RSVPModal = ({ isOpen, onClose }) => {
             </p>
           </div>
           
-          {/* RSVP Placeholder */}
-          <div className="w-full rounded-lg relative">
-            <div
-              className="w-full flex items-center justify-center bg-neutral-light rounded-lg border border-brand-light/60"
-              style={{ minHeight: '320px' }}
-            >
-              <p className="text-xl sm:text-2xl font-albert font-medium tracking-wide text-brand text-center px-4">
-                RSVP TO BE ADDED
-              </p>
-            </div>
+          {/* RSVP Form */}
+          <div className="w-full rounded-lg relative border border-brand-light/60 overflow-hidden bg-white">
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSdfppewR6ZbSNSgpKOf9qeP22J0Qm568lF-HA7i5lKCuXRVRA/viewform?embedded=true"
+              title="RSVP for the Wedding of Arjay and Nicole"
+              className="w-full"
+              style={{ minHeight: '70vh', border: 0 }}
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
